@@ -81,6 +81,10 @@ function agregarAmigo() {
         return;
     }
 
+    // Limpiar el resultado anterior si existe
+    const resultado = document.getElementById('resultado');
+    resultado.innerHTML = '';
+
     // Agregar el amigo al array
     amigos.push(nombre);
 
@@ -129,6 +133,10 @@ function sortearAmigo() {
     const li = document.createElement('li');
     li.textContent = `Tu amigo secreto es: ${amigoSeleccionado}`;
     resultado.appendChild(li);
+
+    // Limpiar la lista
+    amigos = [];
+    document.getElementById('listaAmigos').innerHTML = '';
 }
 
 // Permitir usar la tecla Enter para agregar amigos
